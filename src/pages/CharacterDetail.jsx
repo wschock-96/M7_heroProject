@@ -35,15 +35,19 @@ export default function CharacterDetail() {
 
   return (
     <Container className="mt-4">
-      <Card className="shadow">
+      <Card bg="dark" text="light" className="shadow-lg rounded-4">
         <Card.Body>
-          <Card.Title className="text-danger fw-bold">{character.name}</Card.Title>
-          <Card.Text>
+          <Card.Title className="text-danger fw-bold fs-3">{character.name}</Card.Title>
+          <Card.Text className="mb-3">
             <strong>Abilities:</strong> {character.abilities}<br />
             <strong>Origin:</strong> {character.origin}
           </Card.Text>
-          <Button variant="outline-danger" onClick={() => navigate(`/edit/${character.id}`)} className="me-2">Edit</Button>
-          <Button variant="danger" onClick={handleDelete}>Delete</Button>
+          <Button variant="outline-light" onClick={() => navigate(`/edit/${character.id}`)} className="me-2">
+            Edit
+          </Button>
+          <Button variant="danger" onClick={handleDelete}>
+            Delete
+          </Button>
         </Card.Body>
       </Card>
     </Container>

@@ -6,15 +6,17 @@ export default function CharacterCard({ character }) {
   const navigate = useNavigate();
 
   return (
-    <Card className="h-100 border-danger shadow-sm">
+    <Card className="h-100">
       <Card.Body>
-        <Card.Title className='text-danger fw-bold'>{character.name}</Card.Title>
+        <Card.Title className="text-danger fw-bold">{character.name}</Card.Title>
         <Card.Text>
-          <strong>Abilities:</strong> {character.abilities}<br />
-          <strong>Origin:</strong> {character.origin}
+          <strong>Alias:</strong> {character.alias}<br />
+          <strong>Alignment:</strong> {character.alignment}<br />
+          <strong>Powers:</strong> {character.powers}<br />
+          <strong>Image:</strong> <a href={character.image_url} target="_blank" rel="noopener noreferrer">View</a>
         </Card.Text>
-        <Button variant="primary outline-danger" onClick={() => navigate(`/characters/${character.id}`)}>
-          View
+        <Button variant="outline-danger" onClick={() => navigate(`/characters/${character.id}`)}>
+          View Details
         </Button>
       </Card.Body>
     </Card>

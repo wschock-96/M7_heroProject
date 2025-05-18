@@ -6,7 +6,13 @@ import { Form, Button, Container, Alert } from 'react-bootstrap';
 export default function EditCharacter() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({ name: '', abilities: '', origin: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    alias: '',
+    alignment: '',
+    powers: '',
+    image_url: ''
+  });
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
@@ -23,8 +29,15 @@ export default function EditCharacter() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setValidated(true);
+    const form = e.currentTarget;
 
+    if (!form.checkValidity()) {
+      e.stopPropagation();
+      setValidated(true);
+      return;
+    }
+
+    setValidated(true);
     axios.put(`http://localhost:5000/characters/${id}`, formData)
       .then(() => {
         setSuccess(true);
@@ -39,20 +52,29 @@ export default function EditCharacter() {
       {error && <Alert variant="danger" dismissible>{error}</Alert>}
       {success && <Alert variant="success" dismissible>Character updated!</Alert>}
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formName">
+        <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control required name="name" value={formData.name} onChange={handleChange} />
-          <Form.Control.Feedback type="invalid">Name is required.</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formAbilities">
-          <Form.Label>Abilities</Form.Label>
-          <Form.Control required name="abilities" value={formData.abilities} onChange={handleChange} />
-          <Form.Control.Feedback type="invalid">Abilities are required.</Form.Control.Feedback>
+        <Form.Group className="mb-3">
+          <Form.Label>Alias</Form.Label>
+          <Form.Control required name="alias" value={formData.alias} onChange={handleChange} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formOrigin">
-          <Form.Label>Origin</Form.Label>
-          <Form.Control required name="origin" value={formData.origin} onChange={handleChange} />
-          <Form.Control.Feedback type="invalid">Origin is required.</Form.Control.Feedback>
+        <Form.Group className="mb-3">
+          <Form.Label>Alignment</Form.Label>
+          <Form.Select required name="alignment" value={formData.alignment} onChange={handleChange}>
+            <option value="">Select</option>
+            <option value="hero">Hero</option>
+            <option value="villain">Villain</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Powers</Form.Label>
+          <Form.Control required name="powers" value={formData.powers} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Image URL</Form.Label>
+          <Form.Control required name="image_url" value={formData.image_url} onChange={handleChange} />
         </Form.Group>
         <Button type="submit" variant="danger">Update</Button>
       </Form>

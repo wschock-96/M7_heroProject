@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --marvel-red: #ED1D24;
   --marvel-dark: #121212;
   --marvel-bg: #1c1c1c;
@@ -135,4 +135,35 @@ a:hover {
   h1 {
     font-size: 1.75rem;
   }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+p, span, label {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+button, .btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
 }

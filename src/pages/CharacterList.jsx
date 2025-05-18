@@ -16,7 +16,7 @@ export default function CharacterList() {
         setCharacters(res.data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch(() => {
         setError('Failed to fetch characters.');
         setLoading(false);
       });
@@ -26,14 +26,16 @@ export default function CharacterList() {
   if (error) return <Error message={error} />;
 
   return (
-    <Container className="mt-4">
-      <h2 className="text-danger mb-4">All Characters</h2>
-      <Row>
-        {characters.map(char => (
-          <Col md={6} lg={4} key={char.id} className="mb-4">
+    <Container className="py-4">
+      <h2 className="text-danger mb-4 text-center">Marvel Characters</h2>
+      <Row className="g-4">
+        {characters.length > 0 ? characters.map(char => (
+          <Col md={6} lg={4} key={char.id}>
             <CharacterCard character={char} />
           </Col>
-        ))}
+        )) : (
+          <p className="text-center text-muted">No characters found.</p>
+        )}
       </Row>
     </Container>
   );
