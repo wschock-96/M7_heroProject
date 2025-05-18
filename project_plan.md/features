@@ -1,0 +1,15 @@
+CRUD Functionality:
+    View all characters on /characters
+    View single character details on /characters/:id
+    Create new character on /create
+    Edit character on /edit/:id
+    Delete character from detail page
+
+Data Fields:
+
+    Each character includes:
+        name
+        alias
+        alignment (hero or villain)
+        powers
+        image_url

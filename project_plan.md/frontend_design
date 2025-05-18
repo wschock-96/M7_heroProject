@@ -1,0 +1,18 @@
+Pages:
+    HomePage: Intro message, Marvel branding
+    CharacterList: Grid of character cards
+    CharacterDetail: Full detail + edit/delete
+    CreateCharacter: Form with validation
+    EditCharacter: Pre-filled form for updates
+    NotFoundPage: 404 fallback
+
+Components:
+    Navbar: Marvel-styled nav with routes
+    CharacterCard: Displays basic character info
+
+Styling:
+    Bootstrap grid layout
+    Marvel red, black, and white color scheme
+    Responsive design for mobile and desktop
+    Centered forms and card content
+    Feedback messages on submit or error

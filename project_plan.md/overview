@@ -1,0 +1,4 @@
+
+// OVERVIEW //
+
+Build a full-stack web application that allows users to view, create, edit, and delete Marvel characters using a Flask backend and a React frontend styled with Bootstrap. The app communicates via a RESTful API and displays character information in a modern, mobile-responsive UI.

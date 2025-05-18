@@ -1,0 +1,16 @@
+Endpoints:
+    GET /characters
+    GET /characters/<int:id>
+    POST /characters
+    PUT /characters/<int:id>
+    DELETE /characters/<int:id>
+
+DB Schema:
+
+    Table: characters
+        id (INT, PK)
+        name (VARCHAR)
+        alias (VARCHAR)
+        alignment (ENUM)
+        powers (TEXT)
+        image_url (VARCHAR)

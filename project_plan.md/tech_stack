@@ -1,0 +1,16 @@
+Backend:
+
+    Flask
+    Flask-CORS
+    Flask-SQLAlchemy
+    Flask-Marshmallow
+    MySQL
+    SQLAlchemy ORM
+
+Frontend:
+
+    React
+    React Router DOM
+    Axios
+    React Bootstrap
+    Custom Marvel-inspired CSS  
