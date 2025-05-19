@@ -6,7 +6,7 @@ This full-stack Marvel Character App allows users to create, view, edit, and del
 
 The app features a clean navigation experience using React Router, with distinct pages for character listings, individual character detail, creation, editing, and a 404 fallback. All forms are built with React Bootstrap and include live validation and feedback. When a user submits a form, the data is validated and then posted to the backend, which stores it securely in the database. The frontend dynamically updates to reflect changes, making the user experience feel instant and interactive.
 
-From a design perspective, the application uses a Marvel-themed red, black, and white color scheme and is fully responsive for mobile and desktop use. Cards and buttons are styled for clarity and ease of use, and toast or alert messages provide instant visual feedback. This project showcases the integration of Python with modern JavaScript frameworks and follows best practices in state management, routing, and user feedback for a polished development experience.
+From a design perspective, the application uses a Marvel-themed red, black, and white color scheme and is fully responsive for mobile and desktop use. Cards and buttons are styled for clarity and ease of use, and toast or alert messages provide instant visual feedback. This project showcases the integration of Python with modern JavaScript frameworks and follows best practices in state management, routing, and user feedback for a polished development experience. Thank you.
 
 
 
